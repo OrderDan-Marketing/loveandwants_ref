@@ -1,0 +1,54 @@
+# manifest.json - PWA 支援
+{
+  "name": "n8n Template Finder",
+  "short_name": "n8n Templates",
+  "description": "快速搜尋和發現 3000+ n8n 工作流模板",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#667eea",
+  "background_color": "#ffffff",
+  "categories": ["productivity", "utilities", "developer"],
+  "lang": "zh-TW",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "AI 模板",
+      "short_name": "AI",
+      "description": "瀏覽 AI 驅動的自動化模板",
+      "url": "/?category=ai",
+      "icons": [{"src": "/favicon.ico", "sizes": "32x32"}]
+    },
+    {
+      "name": "LINE 模板",
+      "short_name": "LINE",
+      "description": "LINE 聊天機器人模板",
+      "url": "/?search=line",
+      "icons": [{"src": "/favicon.ico", "sizes": "32x32"}]
+    },
+    {
+      "name": "Gmail 模板",
+      "short_name": "Gmail",
+      "description": "Gmail 自動化解決方案",
+      "url": "/?search=gmail",
+      "icons": [{"src": "/favicon.ico", "sizes": "32x32"}]
+    }
+  ]
+}

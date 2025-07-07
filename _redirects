@@ -1,0 +1,52 @@
+# n8n Template Finder - 重新導向規則
+# 格式：[來源路徑] [目標路徑] [狀態碼]
+
+# 主要功能導向
+/templates             /?category=all                    302
+/search               /?search=                         302
+/ai                   /?category=ai                     302
+/communication        /?category=communication          302
+/business             /?category=business               302
+/crm                  /?category=crm                    302
+/gmail                /?search=gmail                    302
+/line                 /?search=line                     302
+/slack                /?search=slack                    302
+/automation           /?search=automation               302
+
+# 常見別名導向
+/workflows            /?category=all                    301
+/examples             /?category=all                    301
+/templates.html       /                                 301
+/index.php            /                                 301
+/home                 /                                 301
+
+# API 模擬（將來可能需要）
+/api/templates        /?category=all                    302
+/api/search           /?search=                         302
+
+# 外部連結導向（短網址功能）
+/official             https://n8n.io/workflows/         302
+/docs                 https://docs.n8n.io/             302
+/community            https://community.n8n.io/        302
+/github               https://github.com/n8n-io/n8n    302
+
+# 分類快速連結
+/category/ai          /?category=ai                     302
+/category/business    /?category=business               302
+/category/comm        /?category=communication          302
+/category/data        /?category=data                   302
+/category/marketing   /?category=marketing              302
+/category/hr          /?category=hr                     302
+
+# 廢棄或錯誤路徑導向
+/template/*           /?search=:splat                   301
+/old/*                /                                 301
+/v1/*                 /                                 301
+
+# 特殊頁面
+/robots.txt           /robots.txt                       200
+/sitemap.xml          /sitemap.xml                      200
+/manifest.json        /manifest.json                    200
+
+# SPA 支援 - 讓前端路由正常運作
+/*                    /index.html                       200

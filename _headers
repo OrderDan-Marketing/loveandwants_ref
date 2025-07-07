@@ -1,0 +1,107 @@
+# n8n Template Finder - HTTP 標頭設定
+
+# 全站通用安全標頭
+/*
+  # 安全性標頭
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  
+  # 內容安全政策 (CSP)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.n8n.io https://n8n.io https://www.google-analytics.com; frame-src 'none'; object-src 'none'
+  
+  # CORS 設定（允許從 n8n.io 訪問）
+  Access-Control-Allow-Origin: https://n8n.io
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Authorization
+  
+  # 快取控制
+  Cache-Control: public, max-age=300
+  
+  # 品牌標頭
+  X-Powered-By: Zeabur
+  X-App-Name: n8n-template-finder
+  X-App-Version: 1.0.0
+
+# 主頁面特定標頭
+/
+  # SEO 和社群分享
+  X-Robots-Tag: index, follow
+  
+# HTML 檔案
+/*.html
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=300
+
+# JSON 檔案
+/*.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+# 靜態資源長期快取
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# CSS 檔案
+/*.css
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+# JavaScript 檔案
+/*.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+# 圖片檔案
+/*.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.jpg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.svg
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=31536000, immutable
+
+# 字型檔案
+/*.woff2
+  Content-Type: font/woff2
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.woff
+  Content-Type: font/woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# 壓縮檔案
+/*.gz
+  Content-Encoding: gzip
+  Cache-Control: public, max-age=31536000, immutable
+
+# robots.txt
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+# sitemap.xml
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+# manifest.json
+/manifest.json
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+# 404 頁面
+/404.html
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=300
