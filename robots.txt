@@ -1,13 +1,2 @@
-# robots.txt
 User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /_redirects
-Disallow: /_headers
-Disallow: /config/
-
-# 網站地圖
-Sitemap: https://your-domain.zeabur.app/sitemap.xml
-
-# 快取指示
-Crawl-delay: 1
+Disallow: /
